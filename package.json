@@ -1,0 +1,19 @@
+{
+  "name": "avic.js",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/YuriTu/avic.js.git"
+  },
+  "author": "yuri",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/YuriTu/avic.js/issues"
+  },
+  "homepage": "https://github.com/YuriTu/avic.js#readme"
+}
