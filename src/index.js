@@ -1,4 +1,5 @@
 import Main from "./main"
+import { blob2buffer, url2buffer } from "./util";
 
 
 export default class AvicDecoder {
@@ -10,15 +11,27 @@ export default class AvicDecoder {
         this.decoder = new Main();
     }
 
-    async _parseWithUrl(url) {
+    _decode(bf){
+        return this.decoder.decoder(bf)
+    }
 
+    async _parseWithUrl(url) {
+        const bf = await url2buffer(url);
+        return this._parseWithArraybuffer(bf);
     }
 
     async _parseWithBLob(blob) {
-
+        const bf = await blob2buffer(blob);
+        return this._parseWithArraybuffer(bf);
     }
 
-    async _parseWithArraybuffer() {
+    async _parseWithArraybuffer(bf) {
+        let rs = await this._decode(bf);
+        return {
+            frames:rs.imageBuffer,
+            width:rs.imageWidth,
+            height:rs.imageHeight
+        }
 
     }
 
