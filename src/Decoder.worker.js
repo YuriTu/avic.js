@@ -1,4 +1,4 @@
-import Module from '';
+import Module from './lib/codecs/avif/avif_dec';
 const wasmPath = '';
 
 class DecoderWorker {};
